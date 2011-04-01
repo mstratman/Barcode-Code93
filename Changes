@@ -1,0 +1,5 @@
+Revision history for Barcode-Code93
+
+0.01    Fri Apr  1 09:04:47 CDT 2011
+        - Initial release, based on GD::Barcode::Code93
+
