@@ -7,7 +7,7 @@ Barcode::Code93 - Generate data for Code 93 barcodes
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
@@ -133,7 +133,7 @@ sub _barcode {
        '*'  =>'101011110',  ##Start/Stop
     };
 
-    my @sum_text = ('*', $self->_calculateSums($text), '*');
+    my @sum_text = ('*', $self->calculateSums($text), '*');
 
     my @rv = map { split //, $code93bar->{$_} } @sum_text;
     push @rv, 1;
@@ -144,7 +144,7 @@ sub _barcode {
 #-----------------------------------------------------------------------------
 # calculateSums (from GD::Barcode::Code93)
 #-----------------------------------------------------------------------------
-sub _calculateSums {
+sub calculateSums {
     my $self = shift;
     my $text = shift;
     $text = '' unless defined $text;
