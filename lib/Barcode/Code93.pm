@@ -48,6 +48,10 @@ The L<GD::Barcode::Code93> module, from which this module originates, was based 
 
 The L<GD::Barcode::Code93> module was written by Chris DiMartino, 2004. Thanks to Lobanov Igor, Joel Richard, and Joshua Fortriede for their excellent Bug Reports and patches. All rights reserved.
 
+=head1 SOURCE REPOSITORY
+
+L<http://github.com/mstratman/Barcode-Code93>
+
 =head1 SEE ALSO
 
 =over 4
