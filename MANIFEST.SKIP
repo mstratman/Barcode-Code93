@@ -6,6 +6,6 @@ MANIFEST.SKIP~
 cover_db
 Makefile$
 Makefile.old$
-^HTML-Barcode-
+^Barcode-Code93-*
 ^.gitignore
 .swp$
