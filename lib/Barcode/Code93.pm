@@ -19,8 +19,8 @@ our $VERSION = '0.02';
 =head1 DESCRIPTION
 
 This class is used to generate data for Code 93 barcodes. It is primarily
-useful as a data source for a barcode module that does rendering,
-such L<HTML::Barcode::Code93>.  You can easily make a version that
+useful as a data source for barcode modules that do rendering,
+such as L<HTML::Barcode::Code93>.  You can easily make a version that
 renders an image, PDF, or anything else.
 
 =head1 METHODS
