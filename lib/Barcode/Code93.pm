@@ -16,6 +16,13 @@ our $VERSION = '0.02';
     my $data = Barcode::Code93->new->barcode('MONKEY');
     print for map { $_ ? "#" : ' ' } @$data;
 
+=head1 DESCRIPTION
+
+This class is used to generate data for Code 93 barcodes. It is primarily
+useful as a data source for a barcode module that does rendering,
+such L<HTML::Barcode::Code93>.  You can easily make a version that
+renders an image, PDF, or anything else.
+
 =head1 METHODS
 
 =head2 new
