@@ -50,6 +50,8 @@ Chris DiMartino C<<chris DOT dimartino AT gmail DOT com>> (L<GD::Barcode::Code93
 
 Mark A. Stratman, C<< <stratman at gmail.com> >>
 
+Jan Bieron L<https://github.com/bieron>
+
 =head1 CONTRIBUTERS
 
 The L<GD::Barcode::Code93> module, from which this module originates, was based on code provided by Kawai Takanori. Japan.
