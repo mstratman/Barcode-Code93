@@ -1,5 +1,6 @@
 package Barcode::Code93;
-use Any::Moose;
+use strict; use warnings;
+use Moo;
 
 =head1 NAME
 
@@ -7,7 +8,7 @@ Barcode::Code93 - Generate data for Code 93 barcodes
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 =head1 SYNOPSIS
@@ -86,10 +87,9 @@ See http://dev.perl.org/licenses/ for more information.
 # barcode (from GD::Barcode::Code93)
 #------------------------------------------------------------------------------
 sub _barcode {
-    my $self = shift;
-    my $text = shift;
+    my ($self, $text) = @_;
 
-    my $code93bar = {
+    my %code93bar = (
         0   =>'100010100',
         1   =>'101001000',
         2   =>'101000100',
@@ -138,11 +138,11 @@ sub _barcode {
        '.'  =>'111010100',
        '/'  =>'101101110',
        '*'  =>'101011110',  ##Start/Stop
-    };
+    );
 
     my @sum_text = ('*', $self->calculateSums($text), '*');
 
-    my @rv = map { split //, $code93bar->{$_} } @sum_text;
+    my @rv = map { split //, $code93bar{$_} } @sum_text;
     push @rv, 1;
     return @rv;
 }
@@ -152,8 +152,7 @@ sub _barcode {
 # calculateSums (from GD::Barcode::Code93)
 #-----------------------------------------------------------------------------
 sub calculateSums {
-    my $self = shift;
-    my $text = shift;
+    my ($self, $text) = @_;
     $text = '' unless defined $text;
     my @array = split(//, scalar reverse $text);
 
@@ -209,24 +208,21 @@ sub calculateSums {
     );
 
     my %invCode93Values = reverse %code93values;
-    my $weighted_sum;
 
-    foreach my $counter ( qw/4 3/ ) {
-        for (my $i = 0, my $x = 1; $i <= $#array; $i++, $x++) {
-            my $letter  = $array[$i];
-
-            if ($x > ($counter * 5)) { $x = 1 }
+    foreach my $counter (20, 15) {
+        my $weighted_sum = 0;
+        my $x = 1;
+        foreach my $letter (@array) {
+            if ($x > $counter) { $x = 1 }
             $weighted_sum += ($code93values{$letter} * $x);
+            $x++;
         }
 
         my $check = $invCode93Values{($weighted_sum % 47)};
         unshift @array, $check;
-        $weighted_sum = ();
     }
 
     return reverse @array;
 }
-
-no Any::Moose;
 
 1;
