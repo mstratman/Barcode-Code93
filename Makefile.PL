@@ -5,8 +5,7 @@ all_from 'lib/Barcode/Code93.pm';
 author   q{Mark A. Stratman <stratman@gmail.com>};
 license  'perl';
 
-requires 'Mouse';
-requires 'Any::Moose';
+requires 'Moo';
 
 build_requires 'Test::More';
 

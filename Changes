@@ -1,5 +1,8 @@
 Revision history for Barcode-Code93
 
+0.04    Tue Feb 10 11:08:31 CST 2015
+        - Fixed makefile to require Moo
+
 0.03    Mon Feb, 2 01:00:06 CET 2015
         - Moved from deprecated Any::Moose to Moo
         - Refactor for readability
