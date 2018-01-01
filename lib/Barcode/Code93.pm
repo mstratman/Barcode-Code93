@@ -36,6 +36,10 @@ Generate barcode data representing the C<$text> string.  This returns
 an array (or arrayref in scalar context) containing true and false values
 that represent lines and spaces.
 
+=head2 calculateSums
+
+Method for B<INTERNAL USE>.
+
 =cut
 
 sub barcode {
