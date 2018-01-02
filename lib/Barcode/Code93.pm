@@ -1,4 +1,5 @@
 package Barcode::Code93;
+
 use strict; use warnings;
 use Moo;
 
@@ -7,8 +8,6 @@ use Moo;
 Barcode::Code93 - Generate data for Code 93 barcodes
 
 =cut
-
-our $VERSION = '0.04';
 
 
 =head1 SYNOPSIS
