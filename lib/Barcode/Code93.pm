@@ -1,4 +1,5 @@
 package Barcode::Code93;
+
 use strict; use warnings;
 use Moo;
 
@@ -7,8 +8,6 @@ use Moo;
 Barcode::Code93 - Generate data for Code 93 barcodes
 
 =cut
-
-our $VERSION = '0.04';
 
 
 =head1 SYNOPSIS
@@ -35,6 +34,10 @@ Instantiate a new Barcode::Code93 object.
 Generate barcode data representing the C<$text> string.  This returns
 an array (or arrayref in scalar context) containing true and false values
 that represent lines and spaces.
+
+=head2 calculateSums
+
+Method for B<INTERNAL USE>.
 
 =cut
 
